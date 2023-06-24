@@ -7,14 +7,17 @@
     <title>Trai tim</title>
 </head>
 <body>
+    <div class="container">
+        <span class="name">Thiên Trân</span>
+    </div>
     <div class="snowflakes">&#x2665;</div>
     <div class="heart"> </div>
     <div class="heart2"> </div>
     <Script>
         const heart = document.querySelector('.heart2')
         const heart1 = document.querySelector('.heart')
-
-        setInterval(function(){
+       
+        setInterval(function(){ 
             let colors = ['red', '#FF99FF', '#FF6699' , '#FF3366']
             const color = colors[Math.floor(Math.random() * 4) + 1]
             const positions = ['top','left', 'right', 'bottom']
@@ -36,16 +39,21 @@
             let colors = ['red', '#FF99FF', '#FF6699' , '#FF3366']
             const color = colors[Math.floor(Math.random() * 4) + 1]
             const position = Math.floor(Math.random() *100)
+            let positionTop = Math.floor(Math.random() *100)
+            if(positionTop> 0){
+                positionTop= 0- positionTop
+            }
             const errNumber = Math.random()* 5
-            rainheart(position+errNumber, color)
+            rainheart(position+errNumber, positionTop, color)
         }, 800);
 
-        function rainheart (position, color){
+        function rainheart (position,positionTop, color){
             const body = document.querySelector('body')
             const rainHeart = document.createElement('div')
             rainHeart.classList.add('snowflakes')
             rainHeart.innerHTML='&#x2665;'
             rainHeart.style.left= position+'%'
+            rainHeart.style.top= positionTop+'%'
             rainHeart.style.color= color
             body.appendChild(rainHeart)
         }
