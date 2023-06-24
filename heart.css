@@ -1,0 +1,158 @@
+html,body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.heart {
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    position: relative;
+    transform: rotate(-45deg);
+    overflow-block: hidden;
+    transition: all linear 1s;
+    animation: changeColor linear 3s infinite;
+  }
+  
+  @keyframes changeColor {
+    0%{
+      background-color: red;
+    }
+    100%{
+      background-color: #FF3366;
+    }
+  }
+
+  .heart:before,
+  .heart:after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .heart:before {
+    border-radius: 150px 150px 0 0;
+    top: -150px;
+    left: 0;
+    background-color: inherit;
+  }
+  
+  .heart:after {
+    border-radius: 150px 150px 150px 0;
+    top: 0;
+    left: 150px;
+    background-color: inherit;
+  }
+  
+
+  .heart2 {
+    width: 280px;
+    height: 280px;
+    background-color: white;
+    position: absolute;
+    transform: rotate(-45deg);
+    overflow-block: hidden;
+  }
+  
+  .heart2:before,
+  .heart2:after {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    z-index: 100;
+  }
+  
+  .heart2:before {
+   
+    border-radius: 140px 140px 0 0;
+    top: -146px;
+    left: 0;
+    background-color: inherit;
+  }
+  
+  .heart2:after {
+    border-radius: 140px 140px 140px 0;
+    top: 0;
+    left: 146px;
+    background-color: inherit;
+  }
+
+  .heart3 {
+    width: 280px;
+    height: 280px;
+    position: absolute;
+    transform: rotate(0deg);
+    z-index: 1000;
+    transition: all linear 3s;
+    animation: fadeIn linear 5s infinite;
+  }
+  
+  .heart3:before,
+  .heart3:after {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+  }
+  
+  .heart3:before {
+    border-radius: 140px 140px 0 0;
+    top: -140px;
+    left: 0;
+    background-color: inherit;
+  }
+  
+  .heart3:after {
+    border-radius: 140px 140px 140px 0;
+    top: 0;
+    left: 140px;
+    background-color: inherit;
+  }
+
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+    transform: scale(0);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.snowflakes {
+  color: red;
+  font-size: 50px;
+  font-family: Arial, sans-serif;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  z-index: -1;
+  animation: fallingHeart 5s linear infinite;
+}
+
+@keyframes fallingHeart {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 100vh;
+  }
+}
+
+
+
+
+  
+
+   

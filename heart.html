@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="heart.css">
+    <title>Trai tim</title>
+</head>
+<body>
+    <div class="snowflakes">&#x2665;</div>
+    <div class="heart"> </div>
+    <div class="heart2"> </div>
+    <Script>
+        const heart = document.querySelector('.heart2')
+        const heart1 = document.querySelector('.heart')
+
+        setInterval(function(){
+            let colors = ['red', '#FF99FF', '#FF6699' , '#FF3366']
+            const color = colors[Math.floor(Math.random() * 4) + 1]
+            const positions = ['top','left', 'right', 'bottom']
+            const position = positions[Math.floor(Math.random() * 4) + 1]
+            heart2(color, position)
+        },1000)
+
+        function heart2(color, position){
+            const span = document.createElement('div')
+            span.classList.add('heart3')
+            span.style.background= color
+            span.style.position= 10+'px'
+            heart.appendChild(span)
+            setTimeout(function(){
+                span.remove()
+            },10000)
+        }
+        setInterval(() => {
+            let colors = ['red', '#FF99FF', '#FF6699' , '#FF3366']
+            const color = colors[Math.floor(Math.random() * 4) + 1]
+            const position = Math.floor(Math.random() *100)
+            const errNumber = Math.random()* 5
+            rainheart(position+errNumber, color)
+        }, 500);
+
+        function rainheart (position, color){
+            const body = document.querySelector('body')
+            const rainHeart = document.createElement('div')
+            rainHeart.classList.add('snowflakes')
+            rainHeart.innerHTML='&#x2665;'
+            rainHeart.style.left= position+'%'
+            rainHeart.style.color= color
+            body.appendChild(rainHeart)
+        }
+    </Script>
+</body>
+</html>
